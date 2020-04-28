@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D6B11C3B-6546-46BC-BFAE-9EBE8DC4CC75}</ProjectGuid>
+    <ProjectGuid>{2FDAD880-A7ED-4575-89C4-197FB79B7210}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MedicalManagement.infra</RootNamespace>
-    <AssemblyName>MedicalManagement.infra</AssemblyName>
+    <RootNamespace>MedicalManagement.Common.Entity</RootNamespace>
+    <AssemblyName>MedicalManagement.Common.Entity</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -51,52 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\ORM\EF\MMDbContext.cs" />
-    <Compile Include="Entity %28Não usado mais%29\BairroMap.cs" />
-    <Compile Include="Entity %28Não usado mais%29\CidadeMap.cs" />
-    <Compile Include="Entity %28Não usado mais%29\UfMap.cs" />
-    <Compile Include="Migrations\202004281228046_InitialMigration.cs" />
-    <Compile Include="Migrations\202004281228046_InitialMigration.designer.cs">
-      <DependentUpon>202004281228046_InitialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004281232573_AddEntityTypeConfigurationWithFluentApi.cs" />
-    <Compile Include="Migrations\202004281232573_AddEntityTypeConfigurationWithFluentApi.designer.cs">
-      <DependentUpon>202004281232573_AddEntityTypeConfigurationWithFluentApi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004281752237_AddmedicalEntityAbstractConfig.cs" />
-    <Compile Include="Migrations\202004281752237_AddmedicalEntityAbstractConfig.designer.cs">
-      <DependentUpon>202004281752237_AddmedicalEntityAbstractConfig.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="MedicalEntityAbstractConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TypeConfiguration\BairroTypeConfiguration.cs" />
-    <Compile Include="TypeConfiguration\CidadeTypeConfiguration.cs" />
-    <Compile Include="TypeConfiguration\UfTypeConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MedicalManagement.Common.Entity\MedicalManagement.Common.Entity.csproj">
-      <Project>{2fdad880-a7ed-4575-89c4-197fb79b7210}</Project>
-      <Name>MedicalManagement.Common.Entity</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MedicalManagement.Domain\MedicalManagement.Domain.csproj">
-      <Project>{e9ecd9dc-c7cb-42b2-8dda-d06508b0b793}</Project>
-      <Name>MedicalManagement.Domain</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202004281228046_InitialMigration.resx">
-      <DependentUpon>202004281228046_InitialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004281232573_AddEntityTypeConfigurationWithFluentApi.resx">
-      <DependentUpon>202004281232573_AddEntityTypeConfigurationWithFluentApi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004281752237_AddmedicalEntityAbstractConfig.resx">
-      <DependentUpon>202004281752237_AddmedicalEntityAbstractConfig.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

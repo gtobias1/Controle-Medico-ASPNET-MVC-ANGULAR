@@ -1,5 +1,6 @@
 ﻿using MedicalManagement.Domain.Entities;
 using MedicalManagement.infra.Entity;
+using MedicalManagement.infra.TypeConfiguration;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
@@ -26,9 +27,12 @@ namespace MedicalManagement.infra.Data.ORM.EF
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
 
             //Add FluentApi Map
-            modelBuilder.Configurations.Add(new UfMap());
-            modelBuilder.Configurations.Add(new CidadeMap());
-            modelBuilder.Configurations.Add(new BairroMap());
+            //modelBuilder.Configurations.Add(new UfMap());
+            //modelBuilder.Configurations.Add(new CidadeMap());
+            //modelBuilder.Configurations.Add(new BairroMap());
+            modelBuilder.Configurations.Add(new UfTypeConfiguration());
+            modelBuilder.Configurations.Add(new CidadeTypeConfiguration());
+            modelBuilder.Configurations.Add(new BairroTypeConfiguration());
 
             //Sempre quando for encontrado um campo que tem o NOME da tabela com o sufixo Id ele deve
             //ser considerado chave primária
