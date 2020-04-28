@@ -1,0 +1,46 @@
+﻿@model IEnumerable<MedicalManagement.Domain.Entities.Uf>
+
+@{
+    ViewBag.Title = "UF";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar Estado", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Sigla)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th>
+            Código do Estado
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sigla)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodigoEstado)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.UfId }) |
+                @Html.ActionLink("Detalhes", "Details", new { id = item.UfId }) |
+                @Html.ActionLink("Excluir", "Delete", new { id = item.UfId })
+            </td>
+        </tr>
+    }
+
+</table>

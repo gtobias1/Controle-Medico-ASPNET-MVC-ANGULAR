@@ -1,0 +1,42 @@
+﻿@model MedicalManagement.Domain.Entities.Uf
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Uf</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Sigla)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sigla)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+        <dt>
+            <label class="control-label col-md2">Código do Estado</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodigoEstado)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.UfId }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>
